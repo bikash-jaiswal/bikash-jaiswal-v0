@@ -11,16 +11,34 @@ html,body{
    
 }
 .side-bar{
-    
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     height: 100%;
     width: 20%;
     background-image: linear-gradient(to bottom, 
     #fffdc2,
-    #fffdc2 15%,
-    #d7f0a2 15%,
-    #d7f0a2 85%,
-    #fffdc2 85%);
+    #fffdc2 25%,
+    #d7f0a2 25%,
+    #d7f0a2 75%,
+    #fffdc2 75%);
+}
+
+.short-bio{
+
+}
+
+.navigation{
+    text-align: center;
+}
+
+.navigation>.nav-item{
+    padding: 2% 2% 2% 2%;
+    
+}
+
+.social-link{
+    height: 15%;
 }
 .content{
     padding-left: 2%;
