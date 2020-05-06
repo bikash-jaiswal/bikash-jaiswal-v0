@@ -20,10 +20,9 @@
             <div class='navigation'></div>
             <ul>
                 <h3>Navigation</h3>
-                <li class="nav-item">About </li>
-                <li class="nav-item">Home</li>
-                <li class="nav-item">Blog</li>
-                <li class="nav-item">Projects</li>
+               <li class="nav-item"><a href="{{  url_for('home')  }}">Home</a></li>
+               <li class="nav-item"><a href="{{  url_for('blog')  }}">Blog</a></li>
+               <li class="nav-item"><a href="{{ url_for('project') }}">Projects</a></li>
             </ul>
             <div class='social-link'></div>
         </div>
