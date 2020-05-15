@@ -5,7 +5,7 @@ import markdown.extensions.fenced_code
 import markdown.extensions.codehilite
 from flask import Flask,url_for
 from flask import render_template
-from pygments.formatters import HtmlFormatter
+# from pygments.formatters import HtmlFormatter
 
 app = Flask(__name__)
 
@@ -21,11 +21,11 @@ def blog():
     # return render_template('blog.html',title = 'Blog')
 
     # Generate Css for syntax highlighting
-    formatter = HtmlFormatter(style="default",full=True,cssclass="codehilite")
-    css_string = formatter.get_style_defs()
-    md_css_string = "<style>" + css_string + "</style>"
+    # formatter = HtmlFormatter(style="default",full=True,cssclass="codehilite")
+    # css_string = formatter.get_style_defs()
+    # md_css_string = "<style>" + css_string + "</style>"
     
-    md_template = md_css_string + md_template
+    # md_template = md_css_string + md_template
     return md_template
 
 
