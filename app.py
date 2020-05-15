@@ -17,7 +17,7 @@ def home():
 @app.route('/blog')
 def blog():
     readmeFile = open("templates/blogPost/markdownTest.md", "r")
-    md_template = markdown.markdown(readmeFile.read(), extensions=["fenced_code"])
+    md_template = markdown.markdown(readmeFile.read(), extensions=["fenced_code",'meta'])
     # return render_template('blog.html',title = 'Blog')
 
     # Generate Css for syntax highlighting
