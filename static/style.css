@@ -4,13 +4,24 @@ html,body{
     margin: 0%;
    
 }
-.main-container{
+.container{
    display: flex; 
-   text-align: center;
    height: 100%;
    
 }
-.side-bar{
+
+.blogpage-UI{
+    padding-left: 5% 5% 5% 5%;
+}
+
+#content{
+    padding: 2% 2% 2% 2%;
+    width: 80%;
+    background-color: rgb(178, 174, 182);
+    overflow-y: auto;
+}
+
+.sidebar{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -24,9 +35,6 @@ html,body{
     #fffdc2 75%);
 }
 
-.short-bio{
-
-}
 
 .navigation{
     text-align: center;
@@ -40,10 +48,7 @@ html,body{
 .social-link{
     height: 15%;
 }
-.content{
-    padding-left: 2%;
-    background-image: url('/static/img/bg.jpg');
-    background-size: 100% 100%;
-    width: 80%;
-    background-color: cornsilk;
+
+.short-bio{
+    padding-left: 10%;
 }

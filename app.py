@@ -1,13 +1,16 @@
 '''
 '''
-import markdown
-import markdown.extensions.fenced_code
-import markdown.extensions.codehilite
+
 from flask import Flask,url_for
 from flask import render_template
-# from pygments.formatters import HtmlFormatter
+from pygments.formatters import HtmlFormatter
+from flaskext.markdown import Markdown
+
+import os
+post =os.listdir('templates/blogPost/')
 
 app = Flask(__name__)
+
 
 @app.route('/')
 @app.route('/home')
@@ -17,16 +20,14 @@ def home():
 @app.route('/blog')
 def blog():
     readmeFile = open("templates/blogPost/markdownTest.md", "r")
-    md_template = markdown.markdown(readmeFile.read(), extensions=["fenced_code",'meta'])
-    # return render_template('blog.html',title = 'Blog')
+    content = ""
+    with open("templates/blogPost/markdownTest.md", "r") as f:
+        content = f.read()
 
-    # Generate Css for syntax highlighting
-    # formatter = HtmlFormatter(style="default",full=True,cssclass="codehilite")
-    # css_string = formatter.get_style_defs()
-    # md_css_string = "<style>" + css_string + "</style>"
+    # md_template = markdown.markdown(readmeFile.read(), extensions=["fenced_code",'meta'])
+    Markdown(app,extensions=["fenced_code",'meta'])
     
-    # md_template = md_css_string + md_template
-    return md_template
+    return render_template('blog.html', post=content)
 
 
 @app.route('/project')
